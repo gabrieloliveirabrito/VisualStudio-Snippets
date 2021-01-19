@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create Bindable Property</Title>
+      <Shortcut>bindprop</Shortcut>
+	  <Author>Gabriel Oliveira Brito</Author>
+	  <Description>Create a BindableProperty</Description>
+    </Header>
+    <Snippet>
+	<Declarations>
+		<Literal>
+			<ID>Type</ID>
+			<ToolTip>Type of binding property</ToolTip>
+			<Default>string</Default>
+		</Literal>
+		<Literal>
+			<ID>Property</ID>
+			<ToolTip>Name of binding property</ToolTip>
+			<Default>PropertyName</Default>
+		</Literal>
+		<Literal Editable="false">
+			<ID>Class</ID>
+			<Function>ClassName()</Function>
+		</Literal>
+    </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[public static readonly BindableProperty $Property$Property = BindableProperty.Create(nameof($Property$), typeof($Type$), typeof($Class$));
+        public $Type$ $Property$
+        {
+            get => ($Type$)GetValue($Property$Property);
+            set => SetValue($Property$Property, value);
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
